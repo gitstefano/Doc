@@ -17,7 +17,6 @@
     <!-- Custom Fonts -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -39,17 +38,18 @@
 
 <body id="page-top">
 
+    <!--Navigation-->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+            <div class="navbar-header navbar-brand">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logo.png"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,7 +88,9 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Apresentação</h2>
                     <hr class="primary">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+                    <p class="text-faded">A Digital Imobi é uma agência focada em estratégias de marketing digital para o mercado imobiliário.
+                    Os produtos foram desenhados pensando nas imobiliárias, construtoras e corretores para fortalecer sua presença digital e consequentemente aumentar seus leads, conversões e negócios.
+</p>
                 </div>
             </div>
         </div>
@@ -230,7 +232,7 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                     <a href="wifi.html">
-                        <i class="fa fa-4x fa-wifi wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <i class="fa fa-4x fa-wifi wow bounceIn text-primary" style="color:#151515" data-wow-delay=".2s"></i>
                         <h3>Wifi</h3>
                     </a>
                     </div>
@@ -247,6 +249,20 @@
         </div>
     </section>
 
+    <section id="form">
+        <form name="meu_form"> 
+            <h1>Entre em contato</h1> 
+                <p class="nome"> 
+                    <input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" /> 
+                    <label for="nome">Nome</label> </p> 
+                <p class="fone"> 
+                    <input type="text" id="foneid" placeholder="(xx)xx-xx-xx-xx" name="fone" /> 
+                    <label for="fone">Fone</label> </p> 
+                <p> <input type="email" id="emailid" placeholder="  fulano@mail.com" name="email" /> <label for="email">Email</label> </p> 
+                <p> <textarea placeholder="Deixe sua opnião"></textarea> </p> 
+                <p class="submit"> <input type="submit" onclick="Enviar();" value="Enviar" /> </p>
+        
+    </section>
     <section id="contact">
         <div class="container">
             <div class="row">

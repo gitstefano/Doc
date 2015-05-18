@@ -1117,9 +1117,7 @@ a:focus {
 figure {
   margin: 0;
 }
-img {
-  vertical-align: middle;
-}
+
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
@@ -1602,6 +1600,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: -20px;
 }
 .row {
   margin-right: -15px;
@@ -4174,19 +4173,18 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
   border-width: 1px 0 0;
 }
-.navbar-brand {
+
+img{
+  height: 75px;
+  width: 240px;
+  padding: 0px;
   float: left;
-  height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+  margin-top: 10px;
+  position: absolute;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
   text-decoration: none;
-}
-.navbar-brand > img {
-  display: block;
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
@@ -4263,7 +4261,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
+    padding-top: 32px;
     padding-bottom: 15px;
   }
 }
