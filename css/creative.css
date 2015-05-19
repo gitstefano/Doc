@@ -32,6 +32,9 @@ a {
     -moz-transition: all .35s;
     transition: all .35s;
 }
+a {
+    text-decoration: none !important;
+}
 
 a:hover,
 a:focus {
@@ -52,8 +55,6 @@ h1{
     font-weight: 800;
     color: black;
 }
-
-
 .navbar-brand{
     background-size: 200px 50px;
     height: 50px;
@@ -534,26 +535,62 @@ body {
     color: #494949;
     margin-left: 300px;
     margin-top: 70px;
+    max-width: 50%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.form1 input {
+    padding: 0 15px 0 15px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    border: 1px solid #d1d1d1;
+}
+
+input:focus { 
+    outline: none !important;
+    border-color: #F9B60D;
+    box-shadow: 0 0 10px #719ECE;
+}
+.form1 textarea {
+    line-height: 40px;
+    font-size: 16px;
+    border: 1px solid #d1d1d1;
+    resize: none;
+    padding: 0px 15px;
+    height: 150px;
+}
+textarea:focus { 
+    outline: none !important;
+    border-color: #F9B60D;
+    box-shadow: 0 0 10px #719ECE;
 }
 #nomeid {
-    border-radius: 5px;
-    width: 70%;
+    border-radius: 2px;
+    width: 100%;
 }
 #emailid {
-    border-radius: 5px;
-    width: 70%;
+    border-radius: 2px;
+    width: 100%;
 }
 #dso {
-    border-radius: 5px;
-    width: 70%;
+    border-radius: 2px;
+    width: 100%;
 }
 .col-lg-12.text-center.sug {
     margin-bottom: 50px;
     margin-top: -50px;
 }
 .btao {
-    border-radius: 5px;
-    margin-left: 250px;
+    border-radius: 2px;
+    background-color: #f9b60d;
+    border: none;
+    font-weight: bold;
+    color: #fff;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .btao:hover {
     transition: all ease 0.6s;
