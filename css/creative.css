@@ -27,7 +27,7 @@ hr.light {
 }
 
 a {
-    color: #404040;
+    color: #494949;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -35,7 +35,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #F9B60D;
 }
 
 h2,
@@ -65,7 +65,7 @@ h1{
 }
 
 section {
-    padding: 100px 0;
+    padding: 60px 0;
 }
 
 aside {
@@ -148,7 +148,7 @@ aside {
 
     .navbar-default.affix {
         border-color: rgba(34,34,34,.05);
-        background-color: #F05F40;
+        background-color: rgba(73,73,73,.53);
     }
 
     .navbar-default.affix .navbar-header .navbar-brand {
@@ -163,7 +163,7 @@ aside {
 
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
-        color: #222;
+        color: #F9B60D;
     }
 
     .navbar-default.affix .nav > li>a:hover,
@@ -440,7 +440,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn {
     border: 0;
-    border-radius: 300px;
+    border-radius: 150px;
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
@@ -474,4 +474,33 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.form1 {
+    color: #494949;
+    margin-left: 300px;
+    margin-top: 70px;
+}
+#nomeid {
+    border-radius: 5px;
+    width: 70%;
+}
+#emailid {
+    border-radius: 5px;
+    width: 70%;
+}
+#dso {
+    border-radius: 5px;
+    width: 70%;
+}
+.col-lg-12.text-center.sug {
+    margin-bottom: 50px;
+    margin-top: -50px;
+}
+.btao {
+    border-radius: 5px;
+    margin-left: 250px;
+}
+.apst{
+    margin-top: 60px;
 }
