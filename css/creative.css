@@ -50,11 +50,18 @@ h6 {
     color: black;
 }
 
-h1{
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    color: black;
+h1 { 
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #000;
 }
+h3#subt{
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #000;
+    font-size: smaller;
+}
+
 .navbar-brand{
     background-size: 200px 50px;
     height: 50px;
@@ -180,7 +187,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/10.jpg);
+    background-image: url(../img/101.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -495,7 +502,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn {
     border: 0;
-    border-radius: 20px;
+    border-radius: 300px;
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;

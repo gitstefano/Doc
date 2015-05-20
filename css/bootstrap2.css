@@ -228,6 +228,7 @@ th {
   }
   img {
     max-width: 100% !important;
+    cursor: pointer;
   }
   p,
   h2,
@@ -248,6 +249,12 @@ th {
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
+  }
+  .navbar-right {
+    text-transform: uppercase;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+    color: #f05f40;
   }
   .label {
     border: 1px solid #000;
@@ -3878,6 +3885,25 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
   list-style: none;
 }
+.navbar-default .navbar-header .navbar-brand {
+    text-transform: uppercase;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+    color: #f05f40;
+}
+
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: #eb3812;
+}
+
+.navbar-default .nav > li>a,
+.navbar-default .nav>li>a:focus {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
 .nav > li {
   position: relative;
   display: block;
@@ -4175,13 +4201,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 img{
-  height: 65px;
-  width: 200px;
+  height: auto;
+  width: 140px;
   padding: 0px;
   float: left;
-  margin-top: 9px;
+  margin-top: 20px;
   position: absolute;
   margin-left: 18px;
+  cursor: pointer;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -6579,5 +6606,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+div#bs-example-navbar-collapse-1 {
+  margin: -56px 0px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
