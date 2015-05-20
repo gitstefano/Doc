@@ -18,7 +18,7 @@ body {
 
 hr {
     max-width: 50px;
-    border-color: #f05f40;
+    border-color: #f9b60d;
     border-width: 3px;
 }
 
@@ -53,12 +53,12 @@ h6 {
 h1 { 
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    color: #000;
+    color: #FFF;
 }
 h3#subt{
     font-family: 'Cinzel', serif;
     font-weight: 700;
-    color: #000;
+    color: #FFF;
     font-size: smaller;
 }
 
@@ -147,7 +147,7 @@ aside {
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: rgba(255,255,255,.7);
+        color: #F9B60D;
     }
 
     .navbar-default .nav > li>a:hover,
@@ -187,7 +187,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/101.jpg);
+    background-image: url(../img/102.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -203,7 +203,7 @@ header .header-content {
 }
 
 header .header-content .header-content-inner h1 {
-    margin-top: 0;
+    margin-top: 110px;
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 700;
@@ -273,7 +273,7 @@ header .header-content .header-content-inner p {
     margin-bottom: 0;
 }
 
-.fa-google:hover:before{
+.fa-underline:hover:before{
     color: #F9B60D;
 }
 .fa-keyboard-o:hover:before{
@@ -449,8 +449,8 @@ fieldset[disabled] .btn-default.active {
 
 .btn-primary {
     border-color: #f05f40;
-    color: #fff;
-    background-color: #f05f40;
+    color: #FFFFFF;
+    background-color: #f9b60d;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
