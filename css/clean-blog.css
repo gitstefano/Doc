@@ -186,7 +186,6 @@ hr.small {
   padding: 25px;
 }
 .caption {
-  text-align: center;
   font-size: 16px;
   padding: 10px;
   font-style: italic;
@@ -359,4 +358,7 @@ body {
 }
 .link {
   font-style: italic;
+}
+.t6pg {
+  margin-left: 0px;
 }

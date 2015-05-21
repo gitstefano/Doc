@@ -77,41 +77,130 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+                <div>
+                    <h2 class="section-heading" align="center">Regras de nomeclatura</h2>
 
-                    <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+                    <blockquote>Todos queremos tornar nossos códigos fáceis de serem lidos. Fazer isso nos ajuda a trabalhar mais rápido e eficientemente, e, quando outros trabalharem conosco, poderemos manter uma semântica coerente e clareza de código.</blockquote>
 
-                    <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+                    <p align="justify">BEM é a sigla de Block Element Modifier que, em português, significa Bloco Elemento Modificador. Ela sugere uma forma estruturada de nomear suas classes, baseando-se nas propriedades do elemento em questão. Se você, alguma vez, viu alguma classe nomeada dessa forma: header__form—email, é a BEM em ação. Ao usar a metodologia BEM, tenham em mente que usaremos, somente, classes. Nada de IDs. Classes permitem que você repita o nomenclatura BEM quando necessário, além de criar uma estrutura de codificação mais consistente (tanto nos arquivos HTML quanto nos CSS/Sass). Hora da explicação.</p>
 
-                    <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+                    <p class="t6"><b>Bloco</b></p>
+                    <p>O bloco é o recipiente ou contexto em que o elemento se encontra. Imagine isso sendo as grandes partes estruturais do seu código. Você deve ter um cabeçalho, um rodapé, uma barra lateral e uma área para conteúdo. Cada um deles pode ser considerado um bloco. Vejamos a imagem abaixo:</p>
 
-                    <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+                    <div class="imagens">
+                        <div class="block"></div>           
+                    </div>
+                    <p>O elemento bloco é a raiz da classe e sempre virá primeiro. Apenas lembre que, uma vez o bloco definido, você estará pronto para nomear seus elementos.</p>
 
-                    <h2 class="section-heading">The Final Frontier</h2>
+                    <p class="t6"><b>Elemento</b></p>
+                    <p>O elemento é parte do bloco. O bloco é tudo e os elementos são as partes. Cada elemento é escrito após o nome do bloco, conectado por dois traços sublinhados.
+                    <span class="caption text-muted">1  .block__element</span></p>
+                    <p>Sei que parece bem diferente, mas, uma vez que você começa a usar, você se perguntará como conseguiu codificar em CSS sem ele! Os dois traços sublinhados permite você navegar rápida e visualmente, além de manipular o código.
+                    Eis alguns exemplos de como a metodologia funciona: </p>
+                    <span class="caption text-muted"><ol>
+                        <li>.header__logo {}</li>
+                        <li>.header__tagline {}</li>
+                        <li>.header__searchbar {}</li>
+                        <li>.header__navigation {}</li>
+                    </ol>
+                    </span>
+                    <p>Como pode ver, há bastante espaço para ser criativo e moldar a metodologia ao seu gosto. “Navigation” poderia ser “nav”, “tagline” poderia ser alterada para “tag” ou “tagLine”. A chave é manter a nomenclatura simples, clara e precisa. Não pense demais e, uma vez que seu HTML e CSS estejam DRY (don’t repeat yourself - não se repita), não será problema caso precisasse alterar os nomes das classes, se encontrar algum nome mais semântico que funcione para você (apenas tente manter um padrão). Os elementos farão parte da base do nome das classes, ajudando você a entender como estruturar suas folhas de estilo e como administrar seu layout.</p>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                    <p class="t6"><b>Modificadores</b></p>
+                    <p>Agora fica interessante (caso não esteja impressionado ainda!). Quando você nomeia uma classe, o ponto é permitir que aquele elemento seja repetível, de forma que não precise escrever novas classes em outras áreas do site se os estilos dos elementos são os mesmos. Quando precisar modificar o estilo de um elemento específico, você pode usar um modificador (claro!). Para fazer isso, você adiciona um hífen duplo -- após o elemento (ou bloco). Eis um exemplo simples:</p>
+                    <span class="caption text-muted"><ol>
+                        <li>.block--modifier {}</li>
+                        <li>.block__element--modifier {}</li>
+                    </ol></span>
+                    <p>Tenha muito cuidado com esses! Lembre-se que você quer manter o máximo de simplicidade possível para não precisar se repetir ou criar classes extras a menos que seja extremamente necessária. Falemos sobre o código usando o cabeçalho (header) de um site, como exemplo:</p>
+                    <span class="caption text-muted"><ol>
+                        <li>.header__navigation {}</li>
+                        <li>.header__navigation--secondary {}</li>
+                    </ol></span>
+                    <p>Se estiver usando uma navegação secundária, é provável que o espaçamento e o layout sejam os mesmos da navegação primária, mas a cor diferente. Você pode duplicar os estilos originais ou, melhor ainda, usar um préprocessador. Com Sass, você usaria o @extend, para estender o elemento principal (de forma que o elemento secundário herde todas as propriedades) e mudaria só os estilos necessários.</p>
+                    <span class="caption text-muted"><ol>
+                        <li>.header__navigation {</li>
+                        <li>background: #008cba;</li>
+                        <li>padding: 1rem 0;</li>
+                        <li>margin: 2rem 0;</li>
+                        <li>text-transform: uppercase;</li>
+                        <li>}</li>
+                        <li></li>
+                        <li>.header__navigation--secondary {</li>
+                        <li>@extend .header__navigation;</li>
+                        <li>background: #dfe0e0;</li>
+                        <li>}</li>
+                    </ol></span>
+                    <p>Você talvez esteja pensando: “mas os nomes das classes são tão grandes!”. Eu já vejo assim: A nomenclatura BEM é específica, clara e fácil de ler dentro do HTML e comunica, perfeitamente, seu intuito.</p>
+                    <p>O que também gosto da nomenclatura BEM é que você só precisa usar uma classe para cada tag HTML. Veja como ela funcionaria para rótulos. Com seletores padrões seria assim:</p>
+                    <span class="caption text-muted"><ol>
+                        <li>.label .label-default {}</li>
+                        <li>.label .label-alert {}</li>
+                    </ol></span>
+                    <p>Agora, com os seletores BEM:</p>
+                    <span class="caption text-muted"><ol>
+                        <li>.label {}</li>
+                        <li>.label-alert {}</li>
+                    </ol></span>
+                    <p>Linguagens como o Sass (o Scss, especificamente), permite-nos que criemos elementos que compartilhem os mesmos estilos com algumas diferenças. O exemplo acima previne que dupliquemos estilos, porém, permite que alteremos o que for preciso. O que gosto de verdade da metodologia BEM é que não preciso combinar nomes de classes ambíguos como “panel panel-default col-md-3”. Se você usa uma framework como a Foundation, lance mão das mixins. Mas, só para exemplificar, estilizemos esses rótulos que acabamos de definir" </p>
+                    <span class="caption text-muted"><ol>
+                    <li>.label {</li>
+                    <li>background: #eee;</li>
+                    <li>border-radius: 505;</li>
+                    <li>color: #333;</li>
+                    <li>font-size: 1rem;</li>
+                    <li>}</li>
+                    <li> </li>
+                    <li>.label-alert {</li>
+                    <li>@extend .label;</li>
+                    <li>background: #da4531;</li>
+                    <li>color: #fff;</li>
+                    <li>}</li>
+                    </ol></span>
 
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+                <p class="t6"><b>Conclusão</b></p>
+                <p>E o BEM, em resumo, é isso. Como pode ver, há muito mais coisas a se explorar. BEM é um sistema em constante evolução que permite você trazer clareza ao seu código, além de ajudá-lo a definir e configurar a hierarquia do seu desenvolvimento front-end. Ela me ajudou bastante na construção mais eficientes de protótipos, e a transição para código de produção foi ainda mais rápido! </p>
 
-                    <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
 
-                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
 
-                    <h2 class="section-heading">Reaching for the Stars</h2>
+                    <h2 class="section-heading" align="center">Estrutura de pastas</h2>
+                    <div class="imagens">
+                        <div class="estrutura"> </div>
+                        <div class="pastas"></div>
+                    </div>   
+                    <p></p>
 
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+                    <h2 class="section-heading" align="center">Ferramentas</h2>
 
-                    <a href="#">
-                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-                    </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                    <p><b> Sistema Operacional</b></p>
+                    <p><i class="fa fa-windows"></i>    Windows 8 Pro<br>
+                    <i class="fa fa-windows"></i>      Windows 8.1</p>
+                    <p><b>  IDE</b></p>
+                    <p> Sublime ou Netbeans</p>
+                    <p><b>  Framework</b></p>
+                    <p> Angular JS <br>
+                        Angular-Bootstrap ou Twitter-Bootstrap  <br>
+                        Node.Js <br>
+                        Grunt   <br>
+                        LESS ou SASS <br>
+                        Yeoman ou NG-boilerplate</p>
 
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+                    <p><b> Páginas</b></p>
+                    <p><ul>
+                        <li>Estrutura de páginas</li>
+                        <li>Home</li>
+                        <li>Resultado de busca</li>
+                        <li>Detalhe do imóvel</li>
+                        <li>Contato</li>
+                        <li>Empresa</li>
+                        <li>*Favoritos</li>
+                        <li>*Blog capa</li>
+                        <li>*Blog post</li>
+                        <li>*Trabalhe conosco</li>
+                        <li>*Lançamentos</li>
+                        <li>*Exterior</li>
+                        <li>*Revista</li>
+                    </ul></p>
                 </div>
             </div>
         </div>

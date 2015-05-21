@@ -77,42 +77,167 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+                <div>
+                    <p class="t6"><b>Comandos básicos</b></p>
+                    <span class="caption text-muted"><ul>
+                        <li>git – mostra os comandos no cmd</li>
+                        <li>git init – Inicializar (abrir a pasta)</li>
+                        <li>git status – Status da pasta</li>
+                        <li>git add <­!-- public_html --></li>
+                        <li>git commit –m “Coment: Iniciando o versionamento da pasta” – Comitar</li>
+                        <li>git log – Log dos arquivos</li>
+                        <li>git config user.name</li>
+                        <li>Utilizar o TAB</li>
+                    </ul></span>
+                    <p class="t6"><b>Principais comandos</b></p>
+                    <p style="color: blue;"><u>Identidade</u></p>
+                    <p>A primeira coisa que você deve fazer quando instalar o Git é definir o seu nome de usuário e endereço de e-mail. Isso é importante porque todos os commits no Git utilizam essas informações, e está imutavelmente anexado nos commits que você realiza:</p>
+                    <span class="caption text-muted">
+                        $ git config --global user.name "John Doe"<br>
+                        $ git config --global user.email<br>
+                        johndoe@example.com</span>
+                    <p style="color: blue;"><u>Ferramenta de Diff</u></p>
+                    <p>Outra opção útil que você pode querer configurar é a ferramente padrão de diff utilizada para resolver conflitos de merge (fusão). Digamos que você queira utilizar o vimdiff:</p>
+                    <span class="caption text-muted">$ git config --global merge.tool vimdiff</span>
+                    <p>Git aceita kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge e opendiff como ferramentas válidas para merge.</p>
+                    <p style="color: blue;"><u>Verificando suas configurações</u></p>
+                    <p>Caso você queira verificar suas configurações, você pode utilizar o comando <i>"git config --list"</i> para listar todas as configurações que o Git encontrar naquele momento:</p>
+                    <span class="caption text-muted">$ git config --list<br>
+                    user.name=Scott Chacon<br>
+                    user.email=schacon@gmail.com<br>
+                    color.status=auto<br>
+                    color.branch=auto<br>
+                    color.interactive=auto<br>
+                    color.diff=auto<br>
+                    ...</span>
+                    <p style="color: blue;"><u>Ajuda</u></p>
+                    <p>Caso você precise de ajuda usando o Git, exitem três formas de se obter ajuda das páginas de manual (manpage) para quaisquer comandos do Git:</p>
+                    <span class="caption text-muted">$ git help <­verb><br>
+                    $ git <­verb> --help<br>
+                    $ man git-<­verb></span>
+                    <p>Por exemplo, você pode obter a manpage para o comando config executando</p>
+                    <span class="caption text-muted">$ git help config</span>
+                    <p style="color: blue;"><u>Inicializando um Repositório em um Diretório Existente</u></p>
+                    <p>Caso você esteja iniciando o monitoramento de um projeto existente com Git, você precisa ir para o diretório do projeto e digitar</p>
+                    <span class="caption text-muted">$ git init</span>
+                    <p>Isso cria um novo subdiretório chamado .git que contem todos os arquivos necessários de seu repositório — um esqueleto de repositório Git. Neste ponto, nada em seu projeto é monitorado.</p>
+                    <p>Caso você queira começar a controlar o versionamento dos arquivos existentes (diferente de um diretório vazio), você provavelmente deve começar a monitorar esses arquivos e fazer um commit inicial. Você pode realizar isso com poucos comandos <i>git add</i> que especificam quais arquivos você quer monitorar, seguido de um commit:</p>
+                    <span class="caption text-muted">$ git add *.c<br>
+                    $ git add README<br>
+                    $ git commit -m 'initial project version'</span>
+                    <p style="color: blue;"><u>Clonando um Repositório Existente</u></p>
+                    <p>Caso você queira copiar um repositório Git já existente — por exemplo, um projeto que você queira contribuir — o comando necessário é <i>git clone</i>.</p>
+                    <p>Você clona um repositório com git clone [url]. Por exemplo, caso você queria clonar a biblioteca Git do Ruby chamada Grit, você pode fazê-lo da seguinte forma:</p>
+                    <span class="caption text-muted">$ git clone git://github.com/schacon/grit.git</span>
+                    <p>Isso cria um diretório chamado grit, inicializa um diretório .gitdentro deste, obtém todos os dados do repositório e verifica a cópia atual da última versão. Se você entrar no novo diretório grit, você verá todos os arquivos do projeto nele, pronto para serem editados ou utilizados. Caso você queira clonar o repositório em um diretório diferente de grit, é possível especificar esse diretório utilizando a opção abaixo:</p>
+                    <span class="caption text-muted">$ git clone git://github.com/schacon/grit.git mygrit</span>
+                    <p>Este comando faz exatamente a mesma coisa que o anterior, mas o diretório alvo será chamado mygrit.</p>
+                    <p>O Git possui diversos protocolos de transferência que você pode utilizar. O exemplo anterior utiliza o protocolo git://, mas você também pode ver http(s):// ou user@server:/path.git, que utilizam o protocolo de transferência SSH.</p>
+                    <p style="color: blue;"><u>Verificando o Status de Seus Arquivos</u></p>
+                    <p>A principal ferramenta utilizada para determinar quais arquivos estão em quais estados é o comando git status. Se você executar este comando diretamente após uma clonagem, você deverá ver algo similar a isso:</p>
+                    <span class="caption text-muted">$ git status<br>
+                    # On branch master<br>
+                    nothing to commit, working directory clean</span>
+                    <p>Isso significa que você tem um diretório de trabalho limpo — em outras palavras, não existem arquivos monitorados e modificados. </p>
+                    <p style="color: blue;"><u>Monitorando Novos Arquivos</u></p>
+                    <p>Para passar a monitorar um novo arquivo, use o comando git add. Para monitorar o arquivo README, você pode rodar isso:</p>
+                    <span class="caption text-muted">$ git add README </span>
+                    <p>Se você rodar o comando status novamente, você pode ver que o seu arquivo README agora está sendo monitorado e está selecionado:</p>
+                    <span class="caption text-muted">$ git status<br>
+                    # On branch master<br>
+                    # Changes to be committed:<br>
+                    #   (use "git reset HEAD <­file>..." to unstage)<br>
+                    #<br>
+                    #    new file:   README<br>
+                    #</span>
+                    <p style="color: blue;"><u>Ignorando Arquivos</u></p>
+                    <p>Muitas vezes, você terá uma classe de arquivos que não quer que o Git automaticamente adicione ou mostre como arquivos não monitorados. Normalmente estes arquivos são gerados automaticamente como arquivos de log ou produzidos pelo seu sistema de build. Nestes casos, você pode criar um arquivo contendo uma lista de padrões a serem checados chamado .gitignore. Eis um exemplo de arquivo .gitignore: </p>
+                    <span class="caption text-muted">$ cat .gitignore<br>
+                    *.[oa]<br>
+                    *~</span>
+                    <p>A primeira linha fala para o Git ignorar qualquer arquivo finalizado em .o ou .a — arquivos objetos e archive (compactados) que devem ter produto da construção (build) de seu código. A segunda linha fala para o Git ignorar todos os arquivos que terminam com um til (~), os quais são utilizados por muitos editores de texto como o Emacs para marcar arquivos temporários. Você também pode incluir um diretório log, tmp ou pid; documentação gerada automaticamente; e assim por diante. Configurar um arquivo .gitignore antes de começar a trabalhar, normalmente é uma boa ideia, pois evita que você commite acidentalmente arquivos que não deveriam ir para o seu repositório Git.</p>
+                    <p>As regras para os padrões que você pode pôr no arquivo .gitignore são as seguintes:</p>
+                    <ul>
+                        <li>Linhas em branco ou iniciando com # são ignoradas</li>
+                        <li>Padrões glob comuns funcionam</li>
+                        <li>Você pode terminar os padrões com uma barra (/) para especificar diretórios.</li>
+                        <li>Você pode negar um padrão ao iniciá-lo com um ponto de exclamação (!)</li>
+                    </ul>
+                    <p>Padrões glob são como expressões regulares simples que os shells usam. Um asterísco (*) significa zero ou mais caracteres; [abc] condiz com qualquer um dos caracteres de dentro dos colchetes (nesse caso, a, b, ou c); um ponto de interrogação (?) condiz com um único caractere; e os caracteres separados por hífen dentro de colchetes ([0-9]) condizem à qualquer um dos caracteres entre eles (neste caso, de 0 à 9).</p>
+                    <p>Segue um outro exemplo de arquivo .gitignore:<br>
+                    # um comentário - isto é ignorado<br>
+                    # sem arquivos terminados em .a<br>
+                    *.a<br>
+                    # mas rastreie lib.a, mesmo que você tenha ignorado <br>
+                    arquivos terminados em .a acima<br>
+                    !lib.a<br>
+                    # apenas ignore o arquivo TODO na raiz, não o subdiretório TODO<br>
+                    /TODO<br>
+                    # ignore todos os arquivos no diretório build/<br>
+                    build/<br>
+                    # ignore doc/notes.txt mas, não ignore<br>
+                    doc/server/arch.txt<br>
+                    doc/*.txt</p>
+                    <p style="color: blue;"><u>Visualizando Suas Mudanças Selecionadas e Não Selecionadas</u></p>
+                    <p>Se o comando git status for muito vago — você quer saber exatamente o que você alterou, não apenas quais arquivos foram alterados — você pode utilizar o comando git diff. Nós trataremos o comando git diff em mais detalhes posteriormente; mas provavelmente você vai utilizá-lo com frequência para responder estas duas perguntas: O que você alterou, mas ainda não selecionou (stage)? E o que você selecionou, que está para ser commitado? Apesar do comando git status responder essas duas perguntas de maneira geral, o git diff mostra as linhas exatas que foram adicionadas e removidas — o patch, por assim dizer.</p>
+                    <p>Este comando compara o que está no seu diretório de trabalho com o que está na sua área de seleção (staging). O resultado te mostra as mudanças que você fez que ainda não foram selecionadas.</p>
+                    <p>Se você quer ver o que selecionou que irá no seu próximo commit, pode utilizar git diff --cached. (Nas versões do Git 1.6.1 e superiores, você também pode utilizar git diff --staged, que deve ser mais fácil de lembrar.) Este comando compara as mudanças selecionadas com o seu último commit</p>
+                    <p style="color: blue;"><u>Fazendo Commit de Suas Mudanças</u></p>
+                    <p>Agora que a sua área de seleção está do jeito que você quer, você pode fazer o commit de suas mudanças. Lembre-se que tudo aquilo que ainda não foi selecionado — qualquer arquivo que você criou ou modificou que você não tenha rodado o comando git add desde que editou — não fará parte deste commit. Estes arquivos permanecerão como arquivos modificados em seu disco. Neste caso, a última vez que você rodou git status, viu que tudo estava selecionado, portanto você está pronto para fazer o commit de suas mudanças. O jeito mais simples é digitar git commit:</p>
+                    <span class="caption text-muted">$ git commit</span>
+                    <p>Você pode digitar sua mensagem de commit junto ao comanto commit ao especificá-la após a flag -m, assim:</p>
+                    <span class="caption text-muted">$ git commit -m "Story 182: Fix benchmarks for speed"</span>
+                    <p style="color: blue;"><u>Visualizando o Histórico de Commits</u></p>
+                    <p>Depois que você tiver criado vários commits, ou se clonou um repositório com um histórico de commits existente, você provavelmente vai querer ver o que aconteceu. A ferramente mais básica e poderosa para fazer isso é o comando git log.</p>
+                    <p>Estes exemplos usam um projeto muito simples chamado simplegit, que eu frequentemente uso para demonstrações. Para pegar o projeto, execute:</p>
+                    <span class="caption text-muted">git clone git://github.com/schacon/simplegit-progit.git</span>
+                    <p>Uma das opções mais úteis é -p, que mostra o diff introduzido em cada commit. Você pode ainda usar -2, que limita a saída somente às duas últimas entradas.</p>
+                    <p class="t6"><b>Trabalhando com Remotos</b></p>
+                    <p>Para ser capaz de colaborar com qualquer projeto no Git, você precisa saber como gerenciar seus repositórios remotos. Repositórios remotos são versões do seu projeto que estão hospedados na Internet ou em uma rede em algum lugar. Você pode ter vários deles, geralmente cada um é somente leitura ou leitura/escrita pra você. Gerenciar repositórios remotos inclui saber como adicionar repositório remoto, remover remotos que não são mais válidos, gerenciar vários branches remotos e defini-los como monitorados ou não, e mais. Nesta seção, vamos cobrir essas habilidades de gerenciamento remoto.</p>
+                    <p style="color: blue;"><u>Exibindo seus remotos</u></p>
+                    <p>Para ver quais servidores remotos você configurou, você pode executar o comando git remote. Ele lista o nome de cada remoto que você especificou. Se você tiver clonado seu repositório, você deve pelo menos ver um chamado origin — esse é o nome padrão que o Git dá ao servidor de onde você fez o clone:</p>
+                    <span class="caption text-muted">$ git clone git://github.com/schacon/ticgit.git<br>
+                    Initialized empty Git repository in <br>
+                    /private/tmp/ticgit/.git/<br>
+                    remote: Counting objects: 595, done.<br>
+                    remote: Compressing objects: 100% (269/269), done.<br>
+                    remote: Total 595 (delta 255), reused 589 (delta 253)<br>
+                    Receiving objects: 100% (595/595), 73.31 KiB | 1 KiB/s, done.<br>
+                    Resolving deltas: 100% (255/255), done.<br>
+                    $ cd ticgit<br>
+                    $ git remote<br>
+                    origin</span>
 
-                    <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
-
-                    <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-
-                    <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-
-                    <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
-
-                    <h2 class="section-heading">The Final Frontier</h2>
-
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-                    <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-
-                    <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-
-                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-
-                    <h2 class="section-heading">Reaching for the Stars</h2>
-
-                    <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-
-                    <a href="#">
-                        <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-                    </a>
-                    <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-
-                    <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-
-                    <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-
-                    <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
-                </div>
+                    <p>Você também pode especificar -v, que mostra a URL que o Git armazenou para o nome do remoto:</p>
+                    <span class="caption text-muted">$ git remote -v<br>origin  git://github.com/schacon/ticgit.git (fetch)<br>origin  git://github.com/schacon/ticgit.git (push)</span>
+                    <p>Se você tem mais de um remoto, o comando lista todos. Por exemplo, meu repositório Grit se parece com isso.</p>
+                    <span class="caption text-muted">$ cd grit<br>
+                    $ git remote -v<br>
+                    bakkdoor  git://github.com/bakkdoor/grit.git<br>cho45     git://github.com/cho45/grit.git<br>
+                    defunkt   git://github.com/defunkt/grit.git<br>
+                    koke      git://github.com/koke/grit.git<br>
+                    origin    git@github.com:mojombo/grit.git</span>
+                    <p>
+                        Isso significa que podemos puxar contribuições de qualquer um desses usuários muito facilmente. Mas note que somente o remoto origin é uma URL SSH, sendo o único pra onde eu posso fazer o push (vamos ver o motivo disso no Capítulo 4).
+                    </p>
+                     <p style="color: blue;"><u>Adicionando repositórios remotos</u></p>
+                     <p>Eu mencionei e dei algumas demonstrações de adição de repositórios remotos nas seções anteriores, mas aqui está como fazê-lo explicitamente. Para adicionar um novo repositório remoto no Git com um nome curto, para que você possa fazer referência facilmente, execute git remote add [nomecurto] [url]:</p>
+                     <span class="caption text-muted">$ git remote<br>
+                    origin<br>$git remote add pb<br>git://github.com/paulboone/ticgit.git<br>$ git remote -v<br>
+                    origin git://github.com/shacon/ticgit.git<br>
+                    pb    git://github.com/paulboone/ticgit.git</span>
+                    <p style="color: blue;"><u>Pushing para seus remotos</u></p>
+                    <p>Quando o seu projeto estiver pronto para ser compartilhado, você tem que enviá-lo para a fonte. O comando para isso é simples: git push [nome-remoto] [branch]. Se você quer enviar o seu branch master para o servidor origin (novamente, clonando normalmente define estes dois nomes para você automaticamente), então você pode rodar o comando abaixo para enviar o seu trabalho para o sevidor:</p>
+                    <span class="caption text-muted">$ git push origin master</span>
+                    <p>Este comando funciona apenas se você clonou de um servidor que você têm permissão para escrita, e se mais ninguém enviou dados no meio tempo.</p>
+                    <p style="color: blue;"><u>Removendo e Renomeando Remotos</u></p>
+                    <p>Se você quiser renomear uma referência, em versões novas do Git você pode rodar git remote rename para modificar um apelido de um remoto. Por exemplo, se você quiser renomear pb para paul, você pode com git remote rename:</p>
+                    <span class="caption text-muted">$ git remote rename pb paul<br>
+                    $ git remote<br>
+                    origin<br>
+                    paul<br></span>
+                    <p>É válido mencionar que isso modifica também os nomes dos branches no servidor remoto. O que costumava ser referenciado como pb/master agora é paul/master.</p>
+                 </div>
             </div>
         </div>
     </article>
