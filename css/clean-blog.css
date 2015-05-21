@@ -335,3 +335,28 @@ body {
     margin-bottom: 0px;
     padding: 0px;
 }
+.fa-diamond {
+  margin-left: 60px;
+  color: rgb(140, 194, 228);
+
+}
+.trans {
+  color: maroon;
+}
+.fa-pencil-square-o {
+  margin-left: 60px;
+  color: rgb(41, 111, 69);
+}
+.fa-cogs {
+  margin-left: 60px;
+  color: darkslategrey
+}
+.p8 {
+  margin-left: 60px;
+}
+.t6 {
+  font-size: 24px;
+}
+.link {
+  font-style: italic;
+}
